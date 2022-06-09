@@ -2,23 +2,18 @@
 
 namespace BoxOfT
 {
-    internal class StartUp
+    public class StartUp
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Box<int> box = new Box<int>();
-
-            box.Add(2);
-            box.Add(0);
-            box.Add(3);
             box.Add(1);
-
-            Console.WriteLine(box.Count);
+            box.Add(2);
+            box.Add(3);
             Console.WriteLine(box.Remove());
-            Console.WriteLine(box.Count);
-
-            Box<bool> box2 = new Box<bool>();
-            box2.Add(2 > 1);
+            box.Add(4);
+            box.Add(5);
+            Console.WriteLine(box.Remove());
         }
     }
 }

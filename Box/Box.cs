@@ -1,28 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace BoxOfT
 {
     public class Box<T>
     {
-        private List<T> list = new List<T>();
+        private List<T> internalList = new List<T>();
 
-        public int Count => list.Count;
+        public int Count => internalList.Count;
 
         public void Add(T element)
         {
-            list.Add(element);
+            this.internalList.Add(element);
         }
 
         public T Remove()
         {
-            T removedElement = this.list[this.Count - 1];
-            list.RemoveAt(this.Count - 1);
-
-            return removedElement;
+            var element = internalList[internalList.Count - 1];
+            internalList.RemoveAt(internalList.Count - 1);
+            return element;
         }
     }
 }
